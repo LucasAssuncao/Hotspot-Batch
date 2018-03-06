@@ -19,7 +19,7 @@ IF "%~1"=="/?" (
     REM ECHO Arg 1: ServerName ^(The name of the HotSpot^)
     REM ECHO Arg 2: Password   ^(The password of the HotSpot^)
     ECHO. 
-    ECHO Como Usar: hotspot [Option as Arg1] ... Arg2 ... Arg3
+    ECHO How to Use: hotspot [Option as Arg1] ... Arg2 ... Arg3
     ECHO.
 
     ECHO -----------------------------------------------------
@@ -106,9 +106,9 @@ IF "%~1"=="/?" (
 
 	echo =================================== >> C:\batch\TXT\wifiHistory.txt
 	echo. >> C:\batch\TXT\wifiHistory.txt
-	echo Rede Wi-Fi gerada em: %dia%/%mes%/%ano% >> C:\batch\TXT\wifiHistory.txt
-	echo Nome da Rede Wi-fi: %2 >> C:\batch\TXT\wifiHistory.txt
-	echo Senha da Rede Wi-fi: %3 >> C:\batch\TXT\wifiHistory.txt
+	echo HotSpot created at: %dia%/%mes%/%ano% >> C:\batch\TXT\wifiHistory.txt
+	echo HotSpot Name: %2 >> C:\batch\TXT\wifiHistory.txt
+	echo HotSpot Password: %3 >> C:\batch\TXT\wifiHistory.txt
 	echo. >> C:\batch\TXT\wifiHistory.txt
 	echo =================================== >> C:\batch\TXT\wifiHistory.txt
 
@@ -120,9 +120,9 @@ IF "%~1"=="/?" (
 
 	echo =================================== >> C:\batch\TXT\wifiHistory.txt
 	echo. >> C:\batch\TXT\wifiHistory.txt
-	echo Rede Wi-Fi gerada em: %dia%/%mes%/%ano% >> C:\batch\TXT\wifiHistory.txt
-	echo Nome da Rede Wi-fi: %2 >> C:\batch\TXT\wifiHistory.txt
-	echo Senha da Rede Wi-fi: %3 >> C:\batch\TXT\wifiHistory.txt
+	echo HotSpot created at: %dia%/%mes%/%ano% >> C:\batch\TXT\wifiHistory.txt
+	echo HotSpot Name: %2 >> C:\batch\TXT\wifiHistory.txt
+	echo HotSpot Password: %3 >> C:\batch\TXT\wifiHistory.txt
 	echo. >> C:\batch\TXT\wifiHistory.txt
 	echo =================================== >> C:\batch\TXT\wifiHistory.txt
 
@@ -172,13 +172,13 @@ IF "%~1"=="/?" (
     )
 
     IF "%~1"=="-ch" (
-        netsh wlan show drivers | find "Rede hospedada"
+        netsh wlan show drivers | find "Hosted Network"
         ECHO.
 	GOTO eof
     )
 
     IF "%~1"=="--check" (
-        netsh wlan show drivers | find "Rede hospedada"
+        netsh wlan show drivers | find "Hosted Network"
         ECHO.
 	GOTO eof
     )
@@ -208,8 +208,8 @@ IF "%~1"=="/?" (
     )    
 
     ECHO.
-    powershell "Write-Host -ForegroundColor Red" Voce precisa passar um parametro
-    powershell "Write-Host -ForegroundColor Red"  Digite "/?" para verificar os parametros disponiveis
+    powershell "Write-Host -ForegroundColor Red" You need to pass a parameter
+    powershell "Write-Host -ForegroundColor Red"  Type "/?" to get help
     ECHO.
     GOTO eof
 )
