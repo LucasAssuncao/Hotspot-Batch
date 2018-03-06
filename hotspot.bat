@@ -9,81 +9,81 @@ REM =====================================================
 
 IF "%~1"=="/?" (
     :HELP
-    REM  ECHO Exemplo 2: "%~NX0" LSERVER P4ssw0rd
+    REM  ECHO Example 2: "%~NX0" LSERVER P4ssw0rd
     ECHO.
-    ECHO Cria um ponto de acesso Wi-Fi para ser utilizado. 
+    ECHO Create a HotSpot to share Internet connection with other devices, like Smarphones and LapTops. 
     ECHO.
-    ECHO OBS: A maquina deve possuir conexao com a Internet 
-    ECHO para fornecer Internet para os outros dispositivos conectados
+    ECHO PS: Your PC needs an Internet connection to share Internet with other devices.
+    ECHO Also, your PC needs a Wireless Network Card that supports a Windows HostedNetwork
     ECHO.    
-    ECHO Argumento 1: ServerName ^(Corresponde ao nome do HotSpot Wi-Fi que sera criado^)
-    ECHO Argumento 2: Password   ^(Corresponde a senha do Hotspot Wi-Fi que sera criado^)
+    REM ECHO Arg 1: ServerName ^(The name of the HotSpot^)
+    REM ECHO Arg 2: Password   ^(The password of the HotSpot^)
     ECHO. 
     ECHO Como Usar: hotspot [Option as Arg1] ... Arg2 ... Arg3
     ECHO.
 
     ECHO -----------------------------------------------------
 
-    ECHO Para criar um HotSpot: 
+    ECHO To create a HotSpot: 
     ECHO hotspot -c [HotspotName as Arg2] [Password as Arg3]
     ECHO.
-    ECHO Exemplo: hotspot -c LSERVER P4ssw0rd
+    ECHO Example: hotspot -c LSERVER P4ssw0rd
     ECHO          ou
     ECHO          hotspot --create LSERVER P4ssw0rd
     ECHO.
-    ECHO OBS: A senha deve ter no minimo 8 caracteres
+    ECHO OBS: Password needs at least 8 characters
     ECHO.
 
     ECHO -----------------------------------------------------
 
-    ECHO Para INICIAR um HotSpot:
+    ECHO To START a HotSpot:
     ECHO.
-    ECHO Exemplo: hotspot -s
+    ECHO Example: hotspot -s
     ECHO          ou
     ECHO          hotspot --start    
     ECHO.
 
     ECHO -----------------------------------------------------
     
-    ECHO Para PARAR um HotSpot:
+    ECHO To STOP a HotSpot:
     ECHO.
-    ECHO Exemplo: hotspot -p
+    ECHO Example: hotspot -p
     ECHO          ou
     ECHO          hotspot --pause
     ECHO.
 
     ECHO -----------------------------------------------------
     
-    ECHO Para CHECAR se a placa wireless suporta um HotSpot:
+    ECHO To CHECK if your PC Wireless Network Card supports a HotSpot:
     ECHO.
-    ECHO Exemplo: hotspot -ch
+    ECHO Example: hotspot -ch
     ECHO          ou
     ECHO          hotspot --check
     ECHO.
 
     ECHO -----------------------------------------------------
 
-    ECHO Para CRIAR um Hotspot com SSID e Senha Aleatoria:
+    ECHO To CREATE a HotSpot with random SSID and Password:
     ECHO.
-    ECHO Exemplo: hotspot -cr
+    ECHO Example: hotspot -cr
     ECHO          ou
     ECHO          hotspot --create-random
     ECHO.
 
     ECHO -----------------------------------------------------
 
-    ECHO Para CONSULTAR os dados do Hotspot atual:
+    ECHO To GET the last HotSpot data ^(SSID and Password^):
     ECHO.
-    ECHO Exemplo: hotspot -gl
+    ECHO Example: hotspot -gl
     ECHO          ou
     ECHO          hotspot --get-last
     ECHO.
 
     ECHO -----------------------------------------------------
 
-    ECHO Para CONSULTAR o STATUS do Hotspot atual:
+    ECHO To Check the current status of your HotSpot ^(On Off^):
     ECHO.
-    ECHO Exemplo: hotspot -st
+    ECHO Example: hotspot -st
     ECHO          ou
     ECHO          hotspot --status
     ECHO.
@@ -232,9 +232,9 @@ if not %m%==8 goto loop:
 
 echo =================================== >> C:\batch\TXT\wifiHistory.txt
 echo. >> C:\batch\TXT\wifiHistory.txt
-echo Rede Wi-Fi gerada em: %dia%/%mes%/%ano% >> C:\batch\TXT\wifiHistory.txt
-echo Nome da Rede Wi-fi: %wname% >> C:\batch\TXT\wifiHistory.txt
-echo Senha da Rede Wi-fi: %pas% >> C:\batch\TXT\wifiHistory.txt
+echo HotSpot created at: %dia%/%mes%/%ano% >> C:\batch\TXT\wifiHistory.txt
+echo HotSpot Name: %wname% >> C:\batch\TXT\wifiHistory.txt
+echo HotSpot Password: %pas% >> C:\batch\TXT\wifiHistory.txt
 echo. >> C:\batch\TXT\wifiHistory.txt
 echo =================================== >> C:\batch\TXT\wifiHistory.txt
 
